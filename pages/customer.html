@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer View - Loyalty App MVP</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Loyalty Cards</h1>
+            <nav>
+                <a href="../index.html">Home</a>
+            </nav>
+        </header>
+        
+        <main>
+            <!-- Login Form (shown by default) -->
+            <div id="customer-login-section" class="form-section">
+                <h2>Customer Login</h2>
+                <form id="customer-login-form">
+                    <div class="form-group">
+                        <label for="customer-email">Email</label>
+                        <input type="email" id="customer-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-password">Password</label>
+                        <input type="password" id="customer-password" required>
+                    </div>
+                    <button type="submit" class="button">Login</button>
+                </form>
+                <p class="form-switch">New customer? <a href="#" id="show-customer-register">Register here</a></p>
+            </div>
+            
+            <!-- Register Form (hidden by default) -->
+            <div id="customer-register-section" class="form-section hidden">
+                <h2>Customer Registration</h2>
+                <form id="customer-register-form">
+                    <div class="form-group">
+                        <label for="new-customer-name">Your Name</label>
+                        <input type="text" id="new-customer-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-customer-email">Email</label>
+                        <input type="email" id="new-customer-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-customer-password">Password</label>
+                        <input type="password" id="new-customer-password" required>
+                    </div>
+                    <button type="submit" class="button">Register</button>
+                </form>
+                <p class="form-switch">Already registered? <a href="#" id="show-customer-login">Login here</a></p>
+            </div>
+            
+            <!-- Customer Dashboard (hidden by default) -->
+            <div id="customer-dashboard" class="hidden">
+                <div class="dashboard-header">
+                    <h2>Welcome, <span id="customer-display-name"></span></h2>
+                    <p>Your Customer ID: <span id="customer-id-display"></span></p>
+                    <button id="customer-logout-button" class="button button-small">Logout</button>
+                </div>
+                
+                <div class="dashboard-content">
+                    <h3>My Loyalty Cards</h3>
+                    <div id="loyalty-cards-container" class="cards-grid">
+                        <!-- Loyalty cards will be generated here -->
+                        <div class="empty-state hidden">
+                            <p>You don't have any loyalty cards yet.</p>
+                            <p>Show your Customer ID to businesses to start collecting rewards!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Loyalty App MVP - Simple Prototype</p>
+        </footer>
+    </div>
+    
+    <script src="../scripts/database.js"></script>
+    <script src="../scripts/ui.js"></script>
+    <script src="../scripts/app.js"></script>
+</body>
+</html>
