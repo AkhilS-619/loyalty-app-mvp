@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Dashboard - Loyalty App MVP</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Business Dashboard</h1>
+            <nav>
+                <a href="../index.html">Home</a>
+            </nav>
+        </header>
+        
+        <main>
+            <!-- Login Form (shown by default) -->
+            <div id="login-section" class="form-section">
+                <h2>Business Login</h2>
+                <form id="business-login-form">
+                    <div class="form-group">
+                        <label for="business-name">Business Name</label>
+                        <input type="text" id="business-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="business-password">Password</label>
+                        <input type="password" id="business-password" required>
+                    </div>
+                    <button type="submit" class="button">Login</button>
+                </form>
+                <p class="form-switch">New business? <a href="#" id="show-register">Register here</a></p>
+            </div>
+            
+            <!-- Register Form (hidden by default) -->
+            <div id="register-section" class="form-section hidden">
+                <h2>Business Registration</h2>
+                <form id="business-register-form">
+                    <div class="form-group">
+                        <label for="new-business-name">Business Name</label>
+                        <input type="text" id="new-business-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-business-password">Password</label>
+                        <input type="password" id="new-business-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="business-category">Category</label>
+                        <select id="business-category">
+                            <option value="restaurant">Restaurant</option>
+                            <option value="cafe">Café</option>
+                            <option value="retail">Retail Store</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="button">Register</button>
+                </form>
+                <p class="form-switch">Already registered? <a href="#" id="show-login">Login here</a></p>
+            </div>
+            
+            <!-- Dashboard (hidden by default) -->
+            <div id="dashboard-section" class="hidden">
+                <div class="dashboard-header">
+                    <h2>Welcome, <span id="business-display-name"></span></h2>
+                    <button id="logout-button" class="button button-small">Logout</button>
+                </div>
+                
+                <div class="dashboard-content">
+                    <div class="card">
+                        <h3>Your Loyalty Program</h3>
+                        <form id="loyalty-program-form">
+                            <div class="form-group">
+                                <label for="program-name">Program Name</label>
+                                <input type="text" id="program-name" placeholder="e.g., Coffee Rewards">
+                            </div>
+                            <div class="form-group">
+                                <label for="program-type">Program Type</label>
+                                <select id="program-type">
+                                    <option value="stamps">Stamp Card (Buy X Get 1 Free)</option>
+                                    <option value="points">Points System</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="stamps-required">Stamps/Points Required for Reward</label>
+                                <input type="number" id="stamps-required" min="1" max="20" value="10">
+                            </div>
+                            <div class="form-group">
+                                <label for="reward-description">Reward Description</label>
+                                <input type="text" id="reward-description" placeholder="e.g., Free Coffee">
+                            </div>
+                            <button type="submit" class="button">Save Program</button>
+                        </form>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Customer Management</h3>
+                        <div class="tool-section">
+                            <h4>Add Stamps/Points</h4>
+                            <form id="add-stamps-form">
+                                <div class="form-group">
+                                    <label for="customer-id">Customer ID</label>
+                                    <input type="text" id="customer-id" placeholder="Enter customer ID">
+                                </div>
+                                <div class="form-group">
+                                    <label for="stamps-to-add">Stamps/Points to Add</label>
+                                    <input type="number" id="stamps-to-add" min="1" value="1">
+                                </div>
+                                <button type="submit" class="button">Add Stamps/Points</button>
+                            </form>
+                        </div>
+                        
+                        <div class="tool-section">
+                            <h4>Redeem Reward</h4>
+                            <form id="redeem-reward-form">
+                                <div class="form-group">
+                                    <label for="redeem-customer-id">Customer ID</label>
+                                    <input type="text" id="redeem-customer-id" placeholder="Enter customer ID">
+                                </div>
+                                <button type="submit" class="button">Redeem Reward</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Loyalty App MVP - Simple Prototype</p>
+        </footer>
+    </div>
+    
+    <script src="../scripts/database.js"></script>
+    <script src="../scripts/ui.js"></script>
+    <script src="../scripts/app.js"></script>
+</body>
+</html>
